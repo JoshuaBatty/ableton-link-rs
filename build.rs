@@ -32,9 +32,9 @@ fn main() {
                 .clang_arg("-isysroot")
                 .clang_arg("/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk")
                 .clang_arg("-I/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include")
-                .whitelist_function("Link_.*")
-                .whitelist_function("SessionState_.*")
-                .whitelist_function("Clock_.*")
+                .allowlist_function("Link_.*")
+                .allowlist_function("SessionState_.*")
+                .allowlist_function("Clock_.*")
                 .generate()
                 .expect("generate bindings");
 

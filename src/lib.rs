@@ -109,9 +109,9 @@ impl Link {
     /// * Realtime-safe: no
     /// 
     /// The callback is invoked on a Link-managed thread.
-    pub fn set_num_peers_callback(&mut self, callback: extern fn(u64)) {
+    pub fn set_num_peers_callback(&mut self, callback: extern fn(usize)) {
         unsafe {
-            let cb = callback as unsafe extern fn(u64);
+            let cb = callback as unsafe extern fn(usize);
             Link_setNumPeersCallback(self.wlink, Some(cb));
         }
     }
